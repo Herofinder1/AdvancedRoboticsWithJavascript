@@ -1,0 +1,33 @@
+var coordinates = 
+[
+	[0.2, -0.4, 0.5]   
+]
+
+var coordinates2 = 
+[
+	[0.2, -0.4, 0.1]
+]
+
+var init_pos = 
+[
+	[-0.2, 0.25, 0.5]
+]
+
+function claw_coordinates() 
+{
+	let cmds = []
+
+	cmds.push(Dexter.move_to(init_pos[0], init_pos[1], init_pos[2]));
+    cmds.push(Dexter.move_to(coordinates[0], coordinates[1], coordinates[2]));
+    cmds.push(Dexter.move_to(coordinates2[0], coordinates2[1], coordinates2[2]));
+    cmds.push(Dexter.move_to(coordinates[0], coordinates[1], coordinates[2]));
+    cmds.push(Dexter.move_to(init_pos[0], init_pos[1], init_pos[2]));
+    
+    return cmds
+}
+
+new Job({
+name: "claw_machine",
+    do_list: [
+    function(){return claw_coordinates()}]})
+    
