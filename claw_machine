@@ -44,25 +44,26 @@ new Job({
         Dexter.empty_instruction_queue(),
 		Dexter.move_to(init_pos[0], init_pos[1], init_pos[2]),
         Dexter.empty_instruction_queue(),
-        Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, close),
+        Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, 0, close),
         
         Dexter.empty_instruction_queue(),
         Dexter.move_to(coordinates[0], coordinates[1], coordinates[2]),
         Dexter.empty_instruction_queue(),
         
-    	Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, open),
+    	Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, 0, open),
         Dexter.empty_instruction_queue(),
 	    Dexter.move_to(coordinates2[0], coordinates2[1], coordinates2[2]),
         Dexter.empty_instruction_queue(),
         
-    	Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, close),
+    	Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, 0, close),
+		Dexter.sleep(1),
         Dexter.empty_instruction_queue(),
         Dexter.move_to(coordinates[0], coordinates[1], coordinates[2]),
         
         Dexter.empty_instruction_queue(),
         Dexter.move_to(init_pos[0], init_pos[1], init_pos[2]),
         Dexter.empty_instruction_queue(),
-    	Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, open)
+    	Dexter.move_to([[0], [0], [0]], undefined, undefined, undefined, 0, open)
     ]
 })
     
