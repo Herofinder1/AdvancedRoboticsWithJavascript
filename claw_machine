@@ -41,25 +41,25 @@ new Job({
     	Dexter.set_parameter("RebootServo", 1),
     	Dexter.set_parameter("RebootServo", 3),
         
-    	Dexter.move_all_joints([NaN, NaN, NaN, NaN, NaN, NaN, close]),
+    	Dexter.move_to([NaN, NaN, NaN, undefined, undefined, undefined, close]),
         
         Dexter.empty_instruction_queue(),
-		Dexter.move_to(init_pos[0], init_pos[1], init_pos[2])
+		Dexter.move_to(init_pos[0], init_pos[1], init_pos[2]),
         
         Dexter.empty_instruction_queue(),
-        Dexter.move_to(coordinates[0], coordinates[1], coordinates[2])
+        Dexter.move_to(coordinates[0], coordinates[1], coordinates[2]),
         
-        Dexter.move_all_joints([NaN, NaN, NaN, NaN, NaN, NaN, open]),
+    	Dexter.move_to([NaN, NaN, NaN, undefined, undefined, undefined, open]),
         Dexter.empty_instruction_queue(),
-	    Dexter.move_to(coordinates2[0], coordinates2[1], coordinates2[2])
+	    Dexter.move_to(coordinates2[0], coordinates2[1], coordinates2[2]),
         
-        Dexter.move_all_joints([NaN, NaN, NaN, NaN, NaN, NaN, close]),
+    	Dexter.move_to([NaN, NaN, NaN, undefined, undefined, undefined, close]),
         Dexter.empty_instruction_queue(),
-        Dexter.move_to(coordinates[0], coordinates[1], coordinates[2])
+        Dexter.move_to(coordinates[0], coordinates[1], coordinates[2]),
         
         Dexter.empty_instruction_queue(),
-        Dexter.move_to(init_pos[0], init_pos[1], init_pos[2])
-        Dexter.move_all_joints([NaN, NaN, NaN, NaN, NaN, NaN, open]),
+        Dexter.move_to(init_pos[0], init_pos[1], init_pos[2]),
+    	Dexter.move_to([NaN, NaN, NaN, undefined, undefined, undefined, open])
     ]
 })
     
