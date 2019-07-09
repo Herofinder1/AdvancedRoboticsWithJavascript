@@ -89,18 +89,40 @@ function chassis(l, w, h, wheelR, hubR, frontWheelOffset, backWheelOffset, windA
             axel(w,hubR)
             ),
 // front wheels
-        translate([l/2 - frontWheelOffset - wheelR, -w, wheelR], 
-            wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
+        difference (
+            translate([l/2 - frontWheelOffset - wheelR, -w, wheelR], 
+                wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
             ),
-        translate([l/2 - frontWheelOffset - wheelR, w, wheelR], 
-            wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
+            translate([l/2 - frontWheelOffset - wheelR, -w, wheelR], 
+                cylinder({r:hubR, h:1})
+            )
             ),
-// bacl wheels
-        translate([-l/2 + backWheelOffset + wheelR, -w, wheelR], 
-            wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
+            
+        difference (
+            translate([l/2 - frontWheelOffset - wheelR, w, wheelR], 
+                wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
             ),
-        translate([-l/2 + backWheelOffset + wheelR, w, wheelR], 
-            wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
+            translate([l/2 - frontWheelOffset - wheelR, w, wheelR], 
+                cylinder({r:hubR, h:1})
+            )
+            ),
+// back wheels
+        difference (
+            translate([-l/2 + backWheelOffset + wheelR, -w, wheelR], 
+                wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
+            ),
+            translate([-l/2 + backWheelOffset + wheelR, -w, wheelR], 
+                cylinder({r:hubR, h:1})
+            )
+            ),
+        
+        difference (
+            translate([-l/2 + backWheelOffset + wheelR, w, wheelR], 
+                wheel(params.numSpokes, params.hubDiam, params.wheelWidth, wheelR*2, 0, 0)
+            ),
+            translate([-l/2 + backWheelOffset + wheelR, w, wheelR], 
+                cylinder({r:hubR, h:1})
+            )
             )
         )
     ]
