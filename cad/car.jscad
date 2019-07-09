@@ -16,18 +16,18 @@ Note: your request may or may not be merged.
 
 function getParameterDefinitions() {
     return [
-        { name: 'carLength', type: 'int', initial: 43, caption: 'Length of the car' }, 
-        { name: 'carWidth', type: 'int', initial: 20, caption: 'Width of the car' },
-        { name: 'carHeight', type: 'int', initial: 18, caption: 'Height of the car' },
-        { name: 'wheelRadius', type: 'int', initial: 4, caption: 'Radius of the wheel' },
-        { name: 'axelRadius', type: 'float', initial: 3, caption: 'Radius of the axel' },
-        { name: 'frontWheelOffset', type: 'int', initial: 3, caption: 'Offset for the front wheel' },
-        { name: 'backWheelOffset', type: 'int', initial: 3, caption: 'Offset for the back wheel' },
-        { name: 'numSpokes', type: 'int', initial: 8, caption: 'Number of spokes'}, 
-        { name: 'hubRadius', type: 'int', initial: 1, caption: 'Radius of the wheel hub'},
-        { name: 'wheelWidth', type: 'int', initial: 2, caption: 'Width of the wheel'},
-        { name: 'windAngle', type: 'int', initial: 45, min: 0, max: 80, caption: 'Front thingy angle?' },
-        { name: 'windAngle2', type: 'int', initial: 30, min: 0, max: 80, caption: 'Back thingy angle?' }
+        { name: 'carLength', type: 'int', initial: 43, min: 0, max: 99999, caption: 'Length of the car:' }, 
+        { name: 'carWidth', type: 'int', initial: 20, min: 0, max: 99999, caption: 'Width of the car:' },
+        { name: 'carHeight', type: 'int', initial: 18, min: 0, max: 99999, caption: 'Height of the car:' },
+        { name: 'wheelRadius', type: 'int', initial: 4, min: 0, max: 99999, caption: 'Radius of the wheel:' },
+        { name: 'axelRadius', type: 'float', initial: 3, min: 0, max: 99999, caption: 'Radius of the axel:' },
+        { name: 'frontWheelOffset', type: 'int', initial: 3, min: 0, max: 99999, caption: 'Offset for the front wheel:' },
+        { name: 'backWheelOffset', type: 'int', initial: 3, min: 0, max: 99999, caption: 'Offset for the back wheel:' },
+        { name: 'numSpokes', type: 'int', initial: 8, min: 0, max: 99999, caption: 'Number of spokes:'}, 
+        { name: 'hubRadius', type: 'int', initial: 1, min: 0, max: 99999, caption: 'Radius of the wheel hub:'},
+        { name: 'wheelWidth', type: 'int', initial: 2, min: 0, max: 99999, caption: 'Width of the wheel:'},
+        { name: 'windAngle', type: 'int', initial: 45, min: 0, max: 99999, caption: 'Front Slant Angle:' },
+        { name: 'windAngle2', type: 'int', initial: 30, min: 0, max: 99999, caption: 'Back Slant Angle:' }
     ];
 }
 
