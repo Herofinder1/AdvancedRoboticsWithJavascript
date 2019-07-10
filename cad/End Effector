@@ -1,0 +1,37 @@
+/* Dexter HD End Effector blank.
+Subtract this from any part to make it slide onto the end effector
+*/
+function getParameterDefinitions() {
+    return [
+           
+            {name: 'pen_r', type: 'int', initial: 4, min: 0, max: 99, caption: 'Pen radius'},
+            {name: 'pen_r2', type: 'int', initial: 5, min: 0, max: 99, caption: '2nd Pen radius'},
+            {name: 'pen_r3', type: 'int', initial: 6, min: 0, max: 99, caption: '3rd Pen radius'},
+            {name: 'width', type: 'int', initial: 50, min: 0, max: 99, caption: 'Width of Block'},
+            {name: 'height', type: 'int', initial: 40, min: 0, max: 99, caption: 'Height of Block'}
+        
+    ]
+}
+
+function main() { 
+var w = 7.5
+var h = 15
+
+return difference (
+        
+        union(
+            difference(
+                            rotate ([0,180,0], translate ([-10, -10, -10], cube ([params.width,40,params.height]))),
+                            translate ([-33, 7, -30], cylinder ({r: params.pen_r2, h:50})),
+                            translate ([-33, 20, -30], cylinder ({r: params.pen_r3, h:50})),
+                            translate ([-33, -4, -30], cylinder ({r: params.pen_r, h:50})))),
+        
+        translate ([4, 5, -27],        
+            union(
+                rotate([0,0,45],translate([-w/2,-w/2,0],color("red",cube([w,w,h])))),
+                translate([0,-w/2,0],color("red",cube([w/2,w,h]))),
+                translate([-13.5,-15,-3],color("red",cube([20,40,3]))),
+                rotate([0,90,0],translate([-15,-15,3.5],color("red",cube([15,40,3]))))
+         ))
+    )
+}
