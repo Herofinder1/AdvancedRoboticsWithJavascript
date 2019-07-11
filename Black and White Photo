@@ -9,7 +9,7 @@ function handle_hello_opencv(vals){
             let gray_mat     = new cv.Mat(700, 700, cv.CV_8UC1)
             let bw_mat     = new cv.Mat(700, 700, cv.CV_8UC1)
             cv.cvtColor(mat, gray_mat, cv.COLOR_RGBA2GRAY)
-            cv.threshold(gray_mat, bw_mat, 128, 255, cv.THRESH_BINARY);
+            cv.threshold(gray_mat, bw_mat, 177, 200, cv.THRESH_OTSU);
             cv.imshow("grey_canvas_id", gray_mat)
             cv.imshow("bw_canvas_id", bw_mat)
             mat.delete()
