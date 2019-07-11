@@ -14,6 +14,7 @@ function handle_hello_opencv(vals){
             cv.imshow("bw_canvas_id", bw_mat)
             mat.delete()
             gray_mat.delete()
+            bw_mat.delete()
         }, 100)
     }
 }
