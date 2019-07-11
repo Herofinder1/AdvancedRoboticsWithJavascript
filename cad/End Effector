@@ -14,8 +14,8 @@ function getParameterDefinitions() {
 }
 
 function main() { 
-var w = 7.5
-var h = 15
+var w = 8
+var h = 15.5
 
 return difference (
         
