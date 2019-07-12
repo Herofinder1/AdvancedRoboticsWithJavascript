@@ -17,14 +17,18 @@ function handle_hello_opencv(vals){
             	for (var m = diff.cols;m >= 0; m--)
                 {
                 	diff.ucharPtr(i,m)[3] = 255
-                    if (i == 0)
+                    if (diff.ucharPtr(i,m)[0] != 0)
                     {
-                    	pixel.push(diff.ucharPtr(i,m)[0])
-                        out(pixel)
+                        pixel.push([i,m]);
+                        out(pixel);
                     }
+                    
+                    //out(diff.ucharPtr(i,m)[0])
 				}
             }
             
+            out(diff.rows)
+            out(diff.cols)
             cv.imshow("diff_canvas_id", diff)
             mat1.delete()
             mat2.delete()
@@ -47,8 +51,8 @@ show_window({
            accept="image/gif, image/jpeg, image/png"/>
     <input type="button" value="show difference"/>
     <p/>
-    <img id="src1_image_id" src="C:/Users/extstudent/Pictures/scan3.jpg"></img>
-    <img id="src2_image_id" src="C:/Users/extstudent/Pictures/scan4.jpg"></img>
+    <img id="src1_image_id" src="/Users/arjan/Downloads/scan3.jpg"></img>
+    <img id="src2_image_id" src="/Users/arjan/Downloads/scan4.jpg"></img>
     <canvas id="diff_canvas_id"></canvas>`,
     x: 50, y: 50, width: 900, height: 600,
     callback: handle_hello_opencv
